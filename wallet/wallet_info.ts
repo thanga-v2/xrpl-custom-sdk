@@ -33,8 +33,20 @@ const adminwallet_info = await client.request({
     command:"account_info",
     account:_adminWallet.address
 })
-
 console.log("\n admin wallet info \n", adminwallet_info)
+
+// get the account lines -----> trsut lines of admin wallet
+
+const adminwallet_account_lines = await client.request({
+    command:"account_lines",
+    account:_adminWallet.address
+})
+console.log("\n \n \n . . . . . \n \n \n")
+console.log("\n admin wallet  account lines info \n", adminwallet_account_lines)
+
+
+
+
 
 
 

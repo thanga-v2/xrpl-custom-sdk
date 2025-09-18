@@ -20,10 +20,23 @@ console.log(adminWallet)
 // Or 
 
 const _adminWallet = Wallet.fromSeed(admin_seed ?? "");
-console.log(_adminWallet)
+// console.log(_adminWallet)
 
 const adminBalance = await client.getXrpBalance(_adminWallet.address)
 console.log(adminBalance)
+
+
+
+// get the account info of admin wallet
+
+const adminwallet_info = await client.request({
+    command:"account_info",
+    account:_adminWallet.address
+})
+
+console.log("\n admin wallet info \n", adminwallet_info)
+
+
 
 
 await client.disconnect()
